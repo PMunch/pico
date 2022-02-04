@@ -43,3 +43,64 @@ html {
   cursor: default; // 4
   tab-size: 4; // 5
 }
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100vw;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  height: 100vh;
+  @if map-get($breakpoints, "sm") {
+    @media (min-width: map-get($breakpoints, "sm")) {
+      grid-template-columns: 1fr max(map-get($viewports, "sm")) 1fr;
+      grid-template-areas:
+        '. header .'
+        '. main   .'
+        '. footer .';
+    }
+  }
+
+  @if map-get($breakpoints, "md") {
+    @media (min-width: map-get($breakpoints, "md")) {
+      grid-template-columns: 1fr max(map-get($viewports, "md")) 1fr;
+    }
+  }
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr max(map-get($viewports, "lg")) 1fr;
+    }
+  }
+
+  @if map-get($breakpoints, "xl") {
+    @media (min-width: map-get($breakpoints, "xl")) {
+      grid-template-columns: 1fr max(map-get($viewports, "xl")) 1fr;
+    }
+  }
+}
+
+.layout-sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 350px 1050px 1fr;
+  grid-template-areas:
+    '. header header .'
+    '. nav    main   .'
+    '. nav    footer .';
+}
+
+body > nav {
+  grid-area: nav;
+}
+body > main {
+  grid-area: main;
+}
+body > header {
+  grid-area: header;
+}
+body > footer {
+  grid-area: footer;
+}

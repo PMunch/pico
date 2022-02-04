@@ -72,6 +72,7 @@
   body > header,
   body > main,
   body > footer,
+  body > nav,
   section {
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {

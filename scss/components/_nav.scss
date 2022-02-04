@@ -3,9 +3,11 @@
  */
 
 // Horizontal Nav
-nav,
-nav ul {
-  display: flex;
+header {
+  nav,
+  nav ul {
+    display: flex;
+  }
 }
 
 nav {
@@ -54,14 +56,13 @@ nav {
 }
 
 // Vertical Nav
-aside {
-  nav,
+nav {
+  display: block;
   ol,
   ul,
   li {
     display: block;
   }
-
   li {
     padding: calc(var(--spacing) * 0.5);
 
@@ -71,3 +72,4 @@ aside {
     }
   }
 }
+
